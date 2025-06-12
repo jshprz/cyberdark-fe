@@ -22,5 +22,8 @@
   <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
     <app-base-table-card [title]="'Top Risk Hosts'" [columns]="userColumns" [data]="userData">
     </app-base-table-card>
+
+    <app-base-list-card [title]="'Top Technologies'" [listItems]="topTechnologies"></app-base-list-card>
+    <app-base-list-card [title]="'Top Vulnerability'" [listKeyValueItems]="vulnerabilityScores" [isKeyValueList]="true"></app-base-list-card>
   </div>
 </div>
