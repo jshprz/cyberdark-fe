@@ -1,0 +1,66 @@
+<div class="card bg-white shadow rounded-sm overflow-hidden border border-gray-200">
+  <div class="p-6 space-y-4">
+    <!-- Title -->
+    @if (title) {
+      <h2 class="text-xl font-semibold text-gray-800 border-b pb-2">{{ title }}</h2>
+    }
+
+    <!-- Actions -->
+    @if (actions) {
+      <div class="flex justify-end">
+        <ng-container *ngTemplateOutlet="actions"></ng-container>
+      </div>
+    }
+
+    <!-- Table -->
+    <div class="overflow-x-auto">
+      <table class="table w-full text-sm text-gray-700 {{ variantClass }}">
+        <thead class="bg-gray-100">
+          <tr>
+            @for (column of columns; track $index) {
+              <th class="px-4 py-2 font-medium text-left">{{ column.header }}</th>
+            } @empty {
+              <th class="px-4 py-2">No Columns</th>
+            }
+          </tr>
+        </thead>
+
+        <tbody>
+          @if (data.length > 0) { 
+            @for (row of data; track $index) {
+              <tr class="hover:bg-gray-50">
+                @for (column of columns; track $index) {
+                  <td class="px-4 py-2">
+                    @if (renderCell) {
+                      <ng-container
+                        *ngTemplateOutlet="
+                          renderCell;
+                          context: { $implicit: row, accessor: column.accessor }
+                        "
+                      ></ng-container>
+                    } @else {
+                      {{ row[column.accessor] }}
+                    }
+                  </td>
+                }
+              </tr>
+            } 
+          } @else {
+            <tr>
+              <td [attr.colspan]="columns.length" class="text-center py-6 italic text-gray-500">
+                {{ emptyMessage }}
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Footer -->
+    @if (footer) {
+      <div class="pt-4 border-t mt-4 text-sm text-gray-500">
+        <ng-container *ngTemplateOutlet="footer"></ng-container>
+      </div>
+    }
+  </div>
+</div>
