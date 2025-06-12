@@ -1,1 +1,68 @@
-<p>dashboard.component works!</p>
+<div class="p-6 space-y-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-gray-500">Total Assets</p>
+      <p class="text-2xl font-bold">278</p>
+    </div>
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-gray-500">Live Hosts</p>
+      <p class="text-2xl font-bold text-green-600">200</p>
+    </div>
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-gray-500">Critical Risks</p>
+      <p class="text-2xl font-bold text-red-600">36</p>
+    </div>
+    <div class="bg-white p-4 rounded-xl shadow">
+      <p class="text-gray-500">Providers</p>
+      <p class="text-2xl font-bold text-indigo-600">196</p>
+    </div>
+  </div>
+
+  <!-- Charts & Tables -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <div class="bg-white p-6 rounded-xl shadow col-span-2">
+      <h2 class="text-lg font-semibold mb-4">Risk Trend</h2>
+      <div class="h-64 bg-gray-100 flex items-center justify-center rounded">
+        <p class="text-gray-400">[ Chart Placeholder ]</p>
+      </div>
+    </div>
+
+    <div class="bg-white p-6 rounded-xl shadow">
+      <h2 class="text-lg font-semibold mb-4">Recent Activity</h2>
+      <ul class="space-y-4 text-sm text-gray-700">
+        <li class="flex justify-between">
+          <span>Host scan completed</span><span class="text-gray-400">5m ago</span>
+        </li>
+        <li class="flex justify-between">
+          <span>New asset discovered</span><span class="text-gray-400">20m ago</span>
+        </li>
+        <li class="flex justify-between">
+          <span>Risk alert triggered</span><span class="text-gray-400">1h ago</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Providers -->
+  <div class="bg-white p-6 rounded-xl shadow">
+    <h2 class="text-lg font-semibold mb-4">Provider Breakdown</h2>
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-sm">
+      <div>
+        <p class="text-gray-500">AWS</p>
+        <p class="text-lg font-bold">14</p>
+      </div>
+      <div>
+        <p class="text-gray-500">Azure</p>
+        <p class="text-lg font-bold">8</p>
+      </div>
+      <div>
+        <p class="text-gray-500">CloudFront</p>
+        <p class="text-lg font-bold">4</p>
+      </div>
+      <div>
+        <p class="text-gray-500">Other</p>
+        <p class="text-lg font-bold">170</p>
+      </div>
+    </div>
+  </div>
+</div>

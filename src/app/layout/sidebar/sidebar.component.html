@@ -1,1 +1,55 @@
-<p>sidebar.component works!</p>
+<div class="flex h-full">
+  <!-- Sidebar -->
+  <aside class="w-64 bg-gray-900 text-white flex flex-col p-4 space-y-4">
+    <div class="text-xl font-bold tracking-tight px-2 py-4 border-b border-gray-700">
+      Smgn Cyber
+    </div>
+
+    <nav class="flex-1">
+      <ul class="space-y-2">
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="Search" class="h-5 w-5"></lucide-angular>
+            Asset Discovery
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="ShieldAlert" class="h-5 w-5"></lucide-angular>
+            Vulnerability Scans
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="TriangleAlert" class="h-5 w-5"></lucide-angular>
+            Risk Scoring
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="Bell" class="h-5 w-5"></lucide-angular>
+            Monitoring & Alerts
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="ChartColumn" class="h-5 w-5"></lucide-angular>
+            Dashboards & Reports
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="Settings" class="h-5 w-5"></lucide-angular>
+            Settings
+          </a>
+        </li>
+        <li>
+          <a href="#" class="flex items-center gap-3 px-3 py-2 rounded hover:bg-gray-800">
+            <lucide-angular [img]="LogOut" class="h-5 w-5"></lucide-angular>
+            Log Out
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </aside>
+</div>
