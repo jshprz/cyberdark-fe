@@ -1,10 +1,17 @@
 import { Component } from '@angular/core';
 import { BaseTableCardComponent } from '../../shared/components/card/base-table-card/base-table-card.component';
 import { BaseListCardComponent } from '../../shared/components/card/base-list-card/base-list-card.component';
+import { GeoMapCardComponent } from '../../shared/components/card/geo-map-card/geo-map-card.component';
+import { DonutChartCardComponent } from '../../shared/components/card/donut-chart-card/donut-chart-card.component';
 
 @Component({
   selector: 'app-dashboard',
-  imports: [BaseTableCardComponent, BaseListCardComponent],
+  imports: [
+    BaseTableCardComponent,
+    BaseListCardComponent,
+    GeoMapCardComponent,
+    DonutChartCardComponent,
+  ],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.css',
 })
