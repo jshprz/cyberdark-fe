@@ -6,18 +6,26 @@
     oninput="onSearch(this.value)" />
 
   <div class="flex flex-wrap items-center gap-12 ml-16 text-sm text-gray-700">
-    <button class="hover:underline font-semibold text-blue-600">
-      All Statuses
-    </button>
-    <button class="hover:underline">
-      All Providers
-    </button>
-    <button class="hover:underline">
-      All Scores
-    </button>
-    <button class="hover:underline">
-      All Technologies
-    </button>
+    @if (filterStatus) {
+        <button class="hover:underline font-semibold text-blue-600">
+            All Statuses
+        </button>
+    }
+    @if (filterProvider) {
+        <button class="hover:underline">
+            All Providers
+        </button>
+    }
+    @if (filterScore) {
+        <button class="hover:underline">
+            All Scores
+        </button>
+    }
+    @if (filterTechnology) {
+        <button class="hover:underline">
+            All Technologies
+        </button>
+    }
   </div>
 
   <button
