@@ -20,6 +20,37 @@ export const routes: Routes = [
             (m) => m.AssetDiscoveryComponent,
           ),
       },
+      {
+        path: 'vulnerability-scans',
+        loadComponent: () =>
+          import('./features/vulnerability-scans/vulnerability-scans.component').then(
+            (m) => m.VulnerabilityScansComponent,
+          ),
+      },
+      {
+        path: 'risk-scoring',
+        loadComponent: () =>
+          import('./features/risk-scoring/risk-scoring.component').then(
+            (m) => m.RiskScoringComponent,
+          ),
+      },
+      {
+        path: 'monitoring-and-alerts',
+        loadComponent: () =>
+          import('./features/monitoring-and-alerts/monitoring-and-alerts.component').then(
+            (m) => m.MonitoringAndAlertsComponent,
+          ),
+      },
+      {
+        path: 'reports',
+        loadComponent: () =>
+          import('./features/reports/reports.component').then((m) => m.ReportsComponent),
+      },
+      {
+        path: 'settings',
+        loadComponent: () =>
+          import('./features/settings/settings.component').then((m) => m.SettingsComponent),
+      },
     ],
   },
   {
