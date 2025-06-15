@@ -2,25 +2,34 @@
   <table class="min-w-full text-sm text-left text-gray-700">
     <thead class="bg-gray-100 text-gray-800 uppercase tracking-wider">
       <tr>
-        <th class="px-4 py-3">#</th>
-        <th class="px-4 py-3">Column 1</th>
-        <th class="px-4 py-3">Column 2</th>
-        <th class="px-4 py-3">Column 3</th>
+        @for (column of columns; track $index) {
+            <th class="px-4 py-2 font-medium text-left">{{ column.header }}</th>
+        } @empty {
+            <th class="px-4 py-2"> No Columns </th>
+        }
       </tr>
     </thead>
     <tbody class="divide-y divide-gray-100">
-      <tr class="hover:bg-gray-50">
-        <th class="px-4 py-2 font-normal text-gray-500">1</th>
-        <td class="px-4 py-2">Row 1, Col 1</td>
-        <td class="px-4 py-2">Row 1, Col 2</td>
-        <td class="px-4 py-2">Row 1, Col 3</td>
-      </tr>
-      <tr class="hover:bg-gray-50">
-        <th class="px-4 py-2 font-normal text-gray-500">2</th>
-        <td class="px-4 py-2">Row 2, Col 1</td>
-        <td class="px-4 py-2">Row 2, Col 2</td>
-        <td class="px-4 py-2">Row 2, Col 3</td>
-      </tr>
+      @if (data.length > 0) {
+        @for (row of data; track $index) {
+            <tr class="hover:bg-gray-50">
+                @for (column of columns; track $index) {
+                    <td class="px-4 py-2">
+                        @if (renderCell) {
+                            <ng-container
+                                *ngTemplateOutlet="
+                                renderCell;
+                                context: { $implicit: row, accessor: column.accessor }
+                            ">
+                            </ng-container>
+                        } @else {
+                            {{ row[column.accessor] }}
+                        }
+                    </td>
+                }
+            </tr>
+        }
+      }
     </tbody>
   </table>
 </div>

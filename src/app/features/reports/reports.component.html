@@ -1,1 +1,9 @@
-<p>reports.component works!</p>
+<div class="p-6 space-y-6">
+    <app-table-toolbar
+        [filterStatus]="true"
+        [filterProvider]="true"
+        [filterScore]="true"
+        [filterTechnology]="true"
+    ></app-table-toolbar>
+    <app-data-table [columns]="leakColumns" [data]="leakData"></app-data-table>
+</div>
