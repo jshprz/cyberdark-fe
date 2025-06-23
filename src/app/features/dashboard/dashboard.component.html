@@ -1,25 +1,31 @@
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-      <!-- Alert card -->
-      <div class="card bg-base-200 p-4">
-        <h2 class="text-lg font-bold flex items-center gap-2">
-          ⚠️ Vulnerability detected
-        </h2>
-        <p class="text-sm text-gray-400">Immediate action is required!</p>
-      </div>
-
-      <!-- Status card -->
-      <div class="card bg-base-200 p-4">
-        <h2 class="text-lg font-bold">System Status</h2>
-        <p class="text-sm text-info">Operational</p>
-      </div>
+<div class="p-6 space-y-6">
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+    <div class="bg-base-200 p-4 rounded-xl shadow border border-base-300">
+      <p class="text-gray-500">Total Assets</p>
+      <p class="text-2xl font-bold">278</p>
     </div>
-
-    <!-- Threat Report -->
-    <div class="card bg-base-200 p-6 mt-6">
-      <h3 class="text-xl font-bold mb-1">Threat Report</h3>
-      <p class="text-lg font-semibold">4 vulnerabilities found</p>
-      <p class="text-sm text-gray-400 mb-4">Last scanned: 2 hours ago</p>
-      <button class="btn bg-[#397379] text-white border-none hover:brightness-110">
-        View Details
-      </button>
+    <div class="bg-base-200 p-4 rounded-xl shadow border border-base-300">
+      <p class="text-gray-500">Live Hosts</p>
+      <p class="text-2xl font-bold text-green-600">200</p>
     </div>
+    <div class="bg-base-200 p-4 rounded-xl shadow border border-base-300">
+      <p class="text-gray-500">Critical Risks</p>
+      <p class="text-2xl font-bold text-red-600">36</p>
+    </div>
+    <div class="bg-base-200 p-4 rounded-xl shadow border border-base-300">
+      <p class="text-gray-500">Providers</p>
+      <p class="text-2xl font-bold text-indigo-600">196</p>
+    </div>
+  </div>
+
+  <!-- Charts & Tables -->
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+    <app-base-table-card [title]="'Top Risk Hosts'" [columns]="userColumns" [data]="userData">
+    </app-base-table-card>
+
+    <app-base-list-card [title]="'Top Technologies'" [listItems]="topTechnologies"></app-base-list-card>
+    <app-base-list-card [title]="'Top Vulnerability'" [listKeyValueItems]="vulnerabilityScores" [isKeyValueList]="true"></app-base-list-card>
+    <app-geo-map-card></app-geo-map-card>
+    <app-donut-chart-card></app-donut-chart-card>
+  </div>
+</div>

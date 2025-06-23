@@ -1,14 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import {
-  Search,
-  Bell,
-  ChartColumn,
-  TriangleAlert,
-  ShieldAlert,
-  Settings,
-  LogOut,
   LucideAngularModule,
+  ClipboardPlus,
+  LayoutDashboard,
+  Workflow,
+  TextSearch,
 } from 'lucide-angular';
 
 @Component({
@@ -18,11 +15,8 @@ import {
   styleUrl: './sidebar.component.css',
 })
 export class SidebarComponent {
-  readonly Search = Search;
-  readonly Bell = Bell;
-  readonly ChartColumn = ChartColumn;
-  readonly TriangleAlert = TriangleAlert;
-  readonly ShieldAlert = ShieldAlert;
-  readonly Settings = Settings;
-  readonly LogOut = LogOut;
+  readonly TextSearch = TextSearch;
+  readonly Workflow = Workflow;
+  readonly LayoutDashboard = LayoutDashboard;
+  readonly ClipboardPlus = ClipboardPlus;
 }
