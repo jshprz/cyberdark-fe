@@ -1,6 +1,9 @@
-<div class="flex min-h-screen">
+<div class="drawer drawer-open">
+  <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+
   <app-sidebar></app-sidebar>
-  <div class="flex-1 bg-gray-100 p-6 space-y-6">
+
+  <div class="drawer-content bg-base-100 p-6 text-base-content">
     <app-header></app-header>
     <router-outlet></router-outlet>
   </div>
