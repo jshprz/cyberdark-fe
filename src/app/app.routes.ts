@@ -15,47 +15,36 @@ export const routes: Routes = [
     children: [
       {
         path: 'dashboard',
+        title: 'Dashboard',
         loadComponent: () =>
           import('./features/dashboard/dashboard.component').then((m) => m.DashboardComponent),
+        data: { title: 'Dashboard' },
       },
       { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
       {
         path: 'asset-discovery',
+        title: 'Asset Discovery',
         loadComponent: () =>
           import('./features/asset-discovery/asset-discovery.component').then(
             (m) => m.AssetDiscoveryComponent,
           ),
+        data: { title: 'Asset Discovery' },
       },
       {
         path: 'vulnerability-scans',
+        title: 'Vulnerability Scans',
         loadComponent: () =>
           import('./features/vulnerability-scans/vulnerability-scans.component').then(
             (m) => m.VulnerabilityScansComponent,
           ),
-      },
-      {
-        path: 'risk-scoring',
-        loadComponent: () =>
-          import('./features/risk-scoring/risk-scoring.component').then(
-            (m) => m.RiskScoringComponent,
-          ),
-      },
-      {
-        path: 'monitoring-and-alerts',
-        loadComponent: () =>
-          import('./features/monitoring-and-alerts/monitoring-and-alerts.component').then(
-            (m) => m.MonitoringAndAlertsComponent,
-          ),
+        data: { title: 'Vulnerability Scans' },
       },
       {
         path: 'reports',
+        title: 'Reports',
         loadComponent: () =>
           import('./features/reports/reports.component').then((m) => m.ReportsComponent),
-      },
-      {
-        path: 'settings',
-        loadComponent: () =>
-          import('./features/settings/settings.component').then((m) => m.SettingsComponent),
+        data: { title: 'Reports' },
       },
     ],
   },
