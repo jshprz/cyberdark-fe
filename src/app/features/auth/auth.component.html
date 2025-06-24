@@ -1,0 +1,51 @@
+<div class="min-h-screen bg-base-100 flex items-center justify-center px-4">
+  <div class="w-full max-w-md space-y-6">
+
+    <h1 class="text-3xl font-bold text-center text-primary tracking-wide">
+        Smgn Cyber
+    </h1>
+
+    <div class="card w-full bg-base-200 border border-base-300 shadow-md">
+      <div class="card-body space-y-6">
+        <h2 class="text-2xl font-bold text-primary text-center">
+          Log in to your account
+        </h2>
+
+        <form class="space-y-4">
+          <div>
+            <label class="label">
+              <span class="label-text text-base-content">Email address</span>
+            </label>
+            <input
+              type="email"
+              class="input input-bordered w-full bg-base-100 text-base-content placeholder:text-base-content/50"
+              placeholder="you@example.com"
+              name="email"
+              required
+            />
+          </div>
+
+          <div>
+            <label class="label">
+              <span class="label-text text-base-content">Password</span>
+            </label>
+            <input
+              type="password"
+              class="input input-bordered w-full bg-base-100 text-base-content placeholder:text-base-content/50"
+              placeholder="••••••••"
+              name="password"
+              required
+            />
+          </div>
+          
+          <app-cyberdark-button [variant]="'primary'" [customClass]="'text-primary-content hover:brightness-125 border-none w-full'" [label]="'Sign In'" [type]="'submit'"></app-cyberdark-button>
+        </form>
+
+        <div class="text-center text-sm text-base-content/60">
+          Don’t have an account?
+          <a href="#" class="text-info hover:underline">Sign up</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

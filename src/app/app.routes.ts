@@ -1,8 +1,14 @@
 import { Routes } from '@angular/router';
 import { MainLayoutComponent } from './layout/main-layout.component';
 import { NotFoundComponent } from './core/not-found/not-found.component';
+import { AuthComponent } from './features/auth/auth.component';
 
 export const routes: Routes = [
+  {
+    path: '',
+    component: AuthComponent,
+    pathMatch: 'full',
+  },
   {
     path: '',
     component: MainLayoutComponent,
