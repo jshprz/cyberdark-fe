@@ -14,4 +14,18 @@ export class CyberdarkButtonComponent {
   @Input() disabled: boolean = false;
   @Input() variant: Variant = 'primary';
   @Input() customClass: string = '';
+
+  get variantClass(): string {
+    return (
+      {
+        primary: 'btn-primary',
+        secondary: 'btn-secondary',
+        accent: 'btn-accent',
+        info: 'btn-info',
+        success: 'btn-success',
+        warning: 'btn-warning',
+        error: 'btn-error',
+      }[this.variant] ?? 'btn-primary'
+    );
+  }
 }
