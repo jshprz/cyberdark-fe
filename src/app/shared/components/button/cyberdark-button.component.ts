@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, computed, input, Input, Signal } from '@angular/core';
 
 export type Variant = 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 'warning' | 'error';
 
@@ -9,11 +9,19 @@ export type Variant = 'primary' | 'secondary' | 'accent' | 'info' | 'success' | 
   styleUrl: './cyberdark-button.component.css',
 })
 export class CyberdarkButtonComponent {
-  @Input() label = 'Click';
-  @Input() type: 'button' | 'submit' = 'button';
-  @Input() disabled: boolean = false;
-  @Input() variant: Variant = 'primary';
-  @Input() customClass: string = '';
+  label = input<string>('Click');
+  type = input<'button' | 'submit'>('button');
+  variant = input<Variant>('primary');
+  customClass = input<string>('');
+  isLoading = input<boolean>();
+
+  disabled: Signal<boolean> = computed(() => {
+    if (this.isLoading()) {
+      return true;
+    } else {
+      return false;
+    }
+  });
 
   get variantClass(): string {
     return (
@@ -25,7 +33,7 @@ export class CyberdarkButtonComponent {
         success: 'btn-success',
         warning: 'btn-warning',
         error: 'btn-error',
-      }[this.variant] ?? 'btn-primary'
+      }[this.variant()] ?? 'btn-primary'
     );
   }
 }
