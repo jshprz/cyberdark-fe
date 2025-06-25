@@ -1,4 +1,4 @@
-# SmgnCyberFe
+# Smgn Cyber FE
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
 
@@ -7,7 +7,7 @@ This project was generated using [Angular CLI](https://github.com/angular/angula
 To start a local development server, run:
 
 ```bash
-ng serve
+npm run start
 ```
 
 Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
@@ -35,6 +35,51 @@ ng build
 ```
 
 This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+
+## Deployment
+
+To deploy the Smgn Cyber front-end to the Linux development server, use the custom PowerShell deployment script named `deploy-smgn-cyber-fe.ps1` located in the root directory of this project.
+
+### Prerequisites
+
+The script uses SSH for secure communication. To avoid being prompted for a password every time you deploy, set up SSH key authentication.
+
+1. Generate an SSH key (if you don't already have one):
+
+```bash
+ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
+```
+
+> **Note:** Skip this step if you already have a public key (typically ~/.ssh/id_rsa.pub).
+
+2. Add your local public SSH key to the dev server:
+
+```bash
+ssh-copy-id dev@23.137.84.162
+```
+
+Once this is set up, the deployment script will no longer prompt for a password.
+
+### Running the Deployment Script
+
+> **Note:** This example assumes you are on macOS or Linux. If you're on Windows, use PowerShell or Windows Terminal with appropriate path adjustments.
+
+```bash
+# (In MacOS) Install PowerShell via Homebrew: `brew install --cask powershell` to be able to run the command below.
+pwsh
+
+# Navigate to the project root
+cd to-the-project-root-directory-of-the-smgn-cyber-fe
+
+# Run the deployment script
+./deploy-smgn-cyber-fe.ps1 -ProjectRoot "./" -Env prod -RemoteHost 23.137.84.162 -RemoteUser dev
+
+# Script Parameters
+# -ProjectRoot – Path to the root of the Angular project (e.g., ./)
+# -Env – Deployment environment (dev or prod)
+# -RemoteHost – IP address or hostname of the remote server
+# -RemoteUser – Username used to connect to the remote server
+```
 
 ## Running unit tests
 
