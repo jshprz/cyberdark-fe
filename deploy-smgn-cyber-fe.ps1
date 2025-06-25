@@ -1,13 +1,17 @@
 param (
+    [Parameter(Mandatory = $true, HelpMessage = "Specify the project root path. (This should work: './')")]
     [string]$ProjectRoot,
+    [Parameter(Mandatory = $true, HelpMessage = "Specify the environment: dev or prod.")]
     [ValidateSet('dev', 'prod')]
-    [string]$Env = 'prod'
+    [string]$Env = 'prod',
+    [Parameter(Mandatory = $true, HelpMessage = "Specify the remote host (e.g., 192.168.1.10).")]
+    [string]$RemoteHost,
+    [Parameter(Mandatory = $true, HelpMessage = "Specify the remote user.")]
+    [string]$RemoteUser
 )
 
 $NgBuildFlags = if ($Env -eq 'prod') { '--configuration=production' } else { '--configuration=development' }
 
-$RemoteUser    = 'se_admin'
-$RemoteHost    = '4.193.197.179'
 $RemoteDir     = '/var/www/smgn-cyber-fe/browser/'
 
 # 1. BUILD
