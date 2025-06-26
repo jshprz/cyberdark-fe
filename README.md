@@ -1,4 +1,4 @@
-# Smgn Cyber FE
+# Cyberdark FE
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
 
@@ -38,7 +38,7 @@ This will compile your project and store the build artifacts in the `dist/` dire
 
 ## Deployment
 
-To deploy the Smgn Cyber front-end to the Linux development server, use the custom PowerShell deployment script named `deploy-smgn-cyber-fe.ps1` located in the root directory of this project.
+To deploy the Cyberdark front-end to the Linux development server, use the custom PowerShell deployment script named `deploy-cyberdark-fe.ps1` located in the root directory of this project.
 
 ### Prerequisites
 
@@ -69,10 +69,10 @@ Once this is set up, the deployment script will no longer prompt for a password.
 pwsh
 
 # Navigate to the project root
-cd to-the-project-root-directory-of-the-smgn-cyber-fe
+cd to-the-project-root-directory-of-the-cyberdark-fe
 
 # Run the deployment script
-./deploy-smgn-cyber-fe.ps1 -ProjectRoot "./" -Env prod -RemoteHost 23.137.84.162 -RemoteUser dev
+./deploy-cyberdark-fe.ps1 -ProjectRoot "./" -Env prod -RemoteHost 23.137.84.162 -RemoteUser dev
 
 # Script Parameters
 # -ProjectRoot – Path to the root of the Angular project (e.g., ./)

@@ -12,7 +12,7 @@ param (
 
 $NgBuildFlags = if ($Env -eq 'prod') { '--configuration=production' } else { '--configuration=development' }
 
-$RemoteDir     = '/var/www/smgn-cyber-fe/browser/'
+$RemoteDir     = '/var/www/cyberdark-fe/browser/'
 
 # 1. BUILD
 Write-Host "`n==> Installing deps & building Angular app ($Env) ..." -ForegroundColor Cyan
@@ -27,7 +27,7 @@ if ($LASTEXITCODE) { throw "Angular build failed." }
 Pop-Location
 
 # Path to the build output
-$BuildDir = Join-Path -Path $ProjectRoot -ChildPath "dist/smgn-cyber-fe/browser"
+$BuildDir = Join-Path -Path $ProjectRoot -ChildPath "dist/cyberdark-fe/browser"
 
 Write-Host "Build output directory: $BuildDir" -ForegroundColor Yellow
 if (-not (Test-Path $BuildDir)) {

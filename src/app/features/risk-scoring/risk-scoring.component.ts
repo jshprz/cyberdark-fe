@@ -36,7 +36,7 @@ export class RiskScoringComponent {
   readonly riskScoringData: RiskScoringRow[] = [
     {
       score: 90,
-      asset: 'smgn-cyber.com',
+      asset: 'cyberdark.com',
       type: 'Domain',
       ip_address: '192.168.0.1',
       status: 'Active',
@@ -47,7 +47,7 @@ export class RiskScoringComponent {
     },
     {
       score: 60,
-      asset: 'smgn-cyber-api.com',
+      asset: 'cyberdark-api.com',
       type: 'Subdomain',
       ip_address: '10.0.0.2',
       status: 'Inactive',
@@ -58,7 +58,7 @@ export class RiskScoringComponent {
     },
     {
       score: 75,
-      asset: 'smgn-cyber.net',
+      asset: 'cyberdark.net',
       type: 'Subdomain',
       ip_address: '172.16.5.4',
       status: 'Active',

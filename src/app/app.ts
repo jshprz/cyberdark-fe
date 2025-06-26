@@ -9,5 +9,5 @@ import { MainLayoutComponent } from './layout/main-layout.component';
   styleUrl: './app.css',
 })
 export class App {
-  protected title = 'smgn-cyber-fe';
+  protected title = 'cyberdark-fe';
 }

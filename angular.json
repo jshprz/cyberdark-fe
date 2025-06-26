@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "smgn-cyber-fe": {
+    "cyberdark-fe": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -21,9 +21,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           },
           "configurations": {
             "production": {
@@ -53,10 +51,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "smgn-cyber-fe:build:production"
+              "buildTarget": "cyberdark-fe:build:production"
             },
             "development": {
-              "buildTarget": "smgn-cyber-fe:build:development"
+              "buildTarget": "cyberdark-fe:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,9 +72,7 @@
                 "input": "public"
               }
             ],
-            "styles": [
-              "src/styles.css"
-            ]
+            "styles": ["src/styles.css"]
           }
         }
       }
