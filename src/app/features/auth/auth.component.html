@@ -11,7 +11,7 @@
                   Log in to your account
                 </h2>
 
-                <form class="space-y-4">
+                <form class="space-y-4" [formGroup]="signInForm" (ngSubmit)="onSubmit()">
                     <div>
                         <label class="label">
                             <span class="label-text text-base-content">Email address</span>
@@ -21,8 +21,12 @@
                             class="input input-bordered w-full bg-base-100 text-base-content placeholder:text-base-content/50"
                             placeholder="you@example.com"
                             name="email"
+                            formControlName="email"
                             required
                         />
+                        @if (signInFormControl.email.touched && signInFormControl.email.errors?.['required']) {
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-small">Oops!</span> Email is required</p>
+                        }
                     </div>
 
                     <div>
@@ -34,6 +38,7 @@
                             class="input input-bordered w-full bg-base-100 text-base-content placeholder:text-base-content/50"
                             placeholder="••••••••"
                             name="password"
+                            formControlName="password"
                             required
                         />
                     </div>
@@ -42,9 +47,9 @@
                         [variant]="'primary'" 
                         [customClass]="'text-primary-content hover:brightness-125 border-none w-full'" 
                         [label]="'Sign In'" 
-                        [type]="'button'"
+                        [type]="'submit'"
                         [isLoading]="isSignInProcessing()"
-                        (click)="clickSignIn($event)"
+                        [disabled]="!signInForm.valid"
                     >
                     </app-cyberdark-button>
                 </form>

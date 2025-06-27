@@ -1,6 +1,6 @@
 <button
     [attr.type]="type()"
-    [disabled]="disabled()"
+    [disabled]="finalDisabled()"
     class="btn {{variantClass}} {{customClass()}}"
 >
     @if (isLoading()) {

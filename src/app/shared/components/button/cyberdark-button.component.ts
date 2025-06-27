@@ -13,10 +13,11 @@ export class CyberdarkButtonComponent {
   type = input<'button' | 'submit'>('button');
   variant = input<Variant>('primary');
   customClass = input<string>('');
-  isLoading = input<boolean>();
+  isLoading = input<boolean>(false);
+  disabled = input<boolean>(false);
 
-  disabled: Signal<boolean> = computed(() => {
-    if (this.isLoading()) {
+  finalDisabled: Signal<boolean> = computed(() => {
+    if (this.isLoading() || this.disabled()) {
       return true;
     } else {
       return false;
