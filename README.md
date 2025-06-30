@@ -55,7 +55,7 @@ ssh-keygen -t rsa -b 4096 -C "your_email@example.com"
 2. Add your local public SSH key to the dev server:
 
 ```bash
-ssh-copy-id dev@23.137.84.162
+ssh-copy-id dev@<ip address>
 ```
 
 Once this is set up, the deployment script will no longer prompt for a password.
@@ -72,7 +72,7 @@ pwsh
 cd to-the-project-root-directory-of-the-cyberdark-fe
 
 # Run the deployment script
-./deploy-cyberdark-fe.ps1 -ProjectRoot "./" -Env prod -RemoteHost 23.137.84.162 -RemoteUser dev
+./deploy-cyberdark-fe.ps1 -ProjectRoot "./" -Env prod -RemoteHost <ip address> -RemoteUser dev
 
 # Script Parameters
 # -ProjectRoot – Path to the root of the Angular project (e.g., ./)
