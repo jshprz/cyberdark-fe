@@ -22,10 +22,14 @@
                             placeholder="you@example.com"
                             name="email"
                             formControlName="email"
+                            email
                             required
                         />
                         @if (signInFormControl.email.touched && signInFormControl.email.errors?.['required']) {
-                            <p class="mt-2 text-sm text-red-600 dark:text-red-500"><span class="font-small">Oops!</span> Email is required</p>
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">Email is required</p>
+                        }
+                        @if (signInFormControl.email.touched && signInFormControl.email.errors?.['email']) {
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">Invalid email address</p>
                         }
                     </div>
 
@@ -41,6 +45,9 @@
                             formControlName="password"
                             required
                         />
+                        @if (signInFormControl.password.touched && signInFormControl.password.errors?.['required']) {
+                            <p class="mt-2 text-sm text-red-600 dark:text-red-500">Password is required</p>
+                        }
                     </div>
 
                     <app-cyberdark-button 

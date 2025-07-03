@@ -26,7 +26,7 @@ export class AuthComponent implements OnInit {
 
   ngOnInit(): void {
     this.signInForm = this.formBuilder.nonNullable.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
       password: ['', Validators.required],
     });
   }
