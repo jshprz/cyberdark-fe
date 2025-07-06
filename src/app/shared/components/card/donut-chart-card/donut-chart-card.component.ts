@@ -1,54 +1,47 @@
 import { CommonModule } from '@angular/common';
-import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import {
-  IgxDoughnutChartModule,
-  IgxItemLegendModule,
-  IgxDoughnutChartComponent,
-  IgxRingSeriesModule,
-  IgxLegendModule,
-} from 'igniteui-angular-charts';
+import { LegendPosition, NgxChartsModule, ScaleType } from '@swimlane/ngx-charts';
+import { single } from './data';
 
 @Component({
   selector: 'app-donut-chart-card',
-  imports: [
-    CommonModule,
-    FormsModule,
-    IgxDoughnutChartModule,
-    IgxRingSeriesModule,
-    IgxLegendModule,
-    IgxItemLegendModule,
-  ],
+  imports: [CommonModule, FormsModule, NgxChartsModule],
   templateUrl: './donut-chart-card.component.html',
   styleUrl: './donut-chart-card.component.css',
 })
-export class DonutChartCardComponent implements AfterViewInit {
-  public data: any;
-  public selectedSliceLabel: string = 'No Selection';
-  public selectedSliceValue: string = '0%';
+export class DonutChartCardComponent {
+  single: any[] | undefined;
+  view: [number, number] = [300, 200];
 
-  @ViewChild('chart', { static: true })
-  public chart!: IgxDoughnutChartComponent;
+  // options
+  margins: [number, number, number, number] = [0, 20, 60, 20];
+  gradient: boolean = true;
+  showLegend: boolean = true;
+  showLabels: boolean = true;
+  isDoughnut: boolean = false;
+  legendPosition: LegendPosition = LegendPosition.Below;
+
+  colorScheme = {
+    name: 'customScheme',
+    selectable: true,
+    group: ScaleType.Ordinal,
+    domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA'],
+  };
 
   constructor() {
-    this.data = [
-      { Value: 37, Label: 'AWS', Summary: 'AWS 37%' },
-      { Value: 25, Label: 'CloudFront', Summary: 'CloudFront 25%' },
-      { Value: 12, Label: 'CloudFlare', Summary: 'CloudFlare 12%' },
-      { Value: 11, Label: 'Azure', Summary: 'Azure 11%' },
-      { Value: 18, Label: 'Other', Summary: 'Other 18%' },
-    ];
+    Object.assign(this, { single });
   }
 
-  public OnSliceClick(e: any) {
-    if (e.args.isSelected) {
-      this.selectedSliceLabel = this.data[e.args.index].Label;
-      this.selectedSliceValue = this.data[e.args.index].Value + '%';
-    } else {
-      this.selectedSliceLabel = 'No Selection';
-      this.selectedSliceValue = '0%';
-    }
+  onSelect(data: any): void {
+    console.log('Item clicked', JSON.parse(JSON.stringify(data)));
   }
 
-  public ngAfterViewInit(): void {}
+  onActivate(data: any): void {
+    console.log('Activate', JSON.parse(JSON.stringify(data)));
+  }
+
+  onDeactivate(data: any): void {
+    console.log('Deactivate', JSON.parse(JSON.stringify(data)));
+  }
 }
